@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-96087710-3"></script><script>  window.dataLayer = window.dataLayer || [];  function gtag(){dataLayer.push(arguments);}  gtag('js', new Date());  gtag('config', 'UA-96087710-3');</script><link title="Dublin Core" href="http://www.gov.tw/schema/dc/" rel="govtwsimpledc.xsd" /><meta name="DC.Title" content="ASUS BMC's firmware: buffer overflow - Radius configuration function" /><meta name="DC.Subject" content="ASUS BMC's firmware: buffer overflow - Radius configuration function" /><meta name="DC.Creator" content="台灣電腦網路危機處理暨協調中心" /><meta name="DC.Publisher" content="台灣電腦網路危機處理暨協調中心" /><meta name="DC.Date" content="2021-04-06" /><meta name="DC.Identifier" content="" /><meta name="DC.Type" content="文字" /><meta name="DC.Description" content="" /><meta name="DC.Contributor" content="台灣電腦網路危機處理暨協調中心" /><meta name="DC.Format" content="Text" /><meta name="DC.Relation" content="" /><meta name="DC.Source" content="台灣電腦網路危機處理暨協調中心" /><meta name="DC.Language" content="中文" /><meta name="DC.coverage.t.min" content="2021-04-06" /><meta name="DC.coverage.t.max" content="" /><meta name="DC.Rights" content="台灣電腦網路危機處理暨協調中心" /><meta name="Category.Theme" content="900" /><meta name="Category.Cake" content="E00" /><meta name="Category.Service" content="I00" /><meta name="Keywords" content="ASUS BMC's firmware: buffer overflow - Radius configuration function" /><title>TWCERT/CC Taiwan Computer Emergency Response Team/Coordination Center-ASUS BMC's firmware: buffer overflow - Radius configuration function</title><script src="/Styles/Unit002/js/jquery-3.5.1.min.js"></script>
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" type="text/css" href="/Styles/Unit002/vendor/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="/Styles/Unit002/vendor/slick/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="/Styles/Unit002/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/Styles/Unit002/css/hyui_eng.css">
+  </head>
+  <body><a class="goCenter" href="#aC" tabindex="1">go to Content</a><div class="wrapper"><header class="header"><div class="container"><a class="accesskey" href="#aU" id="aU" accesskey="U" tabindex="2" title="TWCERT/CC Taiwan Computer Emergency Response Team/Coordination Center">:::</a><nav class="navigation"><ul>
+              <li><a href="sitemap-2.html" title="Sitemap">Sitemap</a></li>
+              <li><a href="mp-2.html" title="Home">Home</a></li>
+              <li><a href="/tw/mp-1.html" title="中文版">中文版</a></li>
+            </ul></nav><h1><a href="mp-2.html" title="TWCERT/CC Taiwan Computer Emergency Response Team/Coordination Center"><img src="/Styles/Unit002/images/logo.png" alt="TWCERT/CC Taiwan Computer Emergency Response Team/Coordination Center"></a></h1>
+          <div class="search">
+            <div class="form_inline" action="sp-search-2.html">
+              <div class="form_grp"><label for="Query">Search:</label><input name="Query" id="Query" type="text" placeholder="Search Keywords" accesskey="S"><input name="btnSearch" id="btnSearch" type="submit" value="Search"></div>
+            </div>
+            <div class="keywordHot">
+              <ul>
+                <li><a id="keywordHot_1" href="javascript:search($('#keywordHot_1').text());" title="Hacker">Hacker</a></li>
+                <li><a id="keywordHot_2" href="javascript:search($('#keywordHot_2').text());" title="Wannacry">Wannacry</a></li>
+                <li><a id="keywordHot_3" href="javascript:search($('#keywordHot_3').text());" title="Phishing">Phishing</a></li>
+                <li><a id="keywordHot_4" href="javascript:search($('#keywordHot_4').text());" title="Encrypt">Encrypt</a></li>
+              </ul>
+            </div>
+          </div><script>
+			function search(value){
+				window.location.href = "sp-search-2.html?Query=" + encodeURIComponent(value) + "#gsc.tab=0&gsc.q=" + encodeURIComponent(value) + "&gsc.sort=date";
+			};
+			$(".icon-search").click(function(){
+				//alert('run2');
+				if($("#Query").val() != ""){
+					search($("#Query").val());
+				}
+			});
+			$("#btnSearch").click(function(){
+				//alert('run');
+				if($("#Query").val() != ""){
+					search($("#Query").val());
+				}
+			});
+			$("#Query").keypress(function (e) {
+				if( e.which == 13) {
+					e.preventDefault();
+					$(".icon-search").click();
+				}
+			});
+			$("#Query").click(function (e) {
+				if( $(this).val()=="Search Keywords") {
+					$(this).val("");
+				}
+			});
+		</script><noscript>Your browser does not support or has disabled JavaScript, please press Ctrl + (+) or Ctrl + (-) to increase or decrease the font size as required. And if you want to print, please press Ctrl + P. Your browser does not support script syntax. Please click on sitemap to view the website. <a title="Sitemap" href="sitemap-2.html">Sitemap</a></noscript><nav class="menu"><ul>
+              <li><a href="/en/np-43-2.html" title="Services">Services</a><ul>
+                  <li><a href="/en/np-57-2.html" title="Incident Report">Incident Report</a></li>
+                  <li><a href="/en/np-58-2.html" title="Terms of Use">Terms of Use</a></li>
+                  <li><a href="/en/np-138-2.html" title="Taiwan Vulnerability Note (TVN)">Taiwan Vulnerability Note (TVN)</a><ul>
+                      <li><a href="/en/lp-139-2.html" title="TVN List">TVN List</a></li>
+                      <li><a href="/en/np-140-2.html" title="Report to us">Report to us</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="/en/np-44-2.html" title="Publications">Publications</a><ul>
+                  <li><a href="/en/lp-59-2.html" title="Public Documents">Public Documents</a></li>
+                  <li><a href="/en/lp-60-2.html" title="Videos">Videos</a></li>
+                </ul>
+              </li>
+              <li><a href="/en/np-45-2.html" title="Links">Links</a><ul>
+                  <li><a href="/en/lp-62-2.html" title="International CERTs">International CERTs</a></li>
+                  <li><a href="/en/lp-63-2.html" title="Resources">Resources</a></li>
+                </ul>
+              </li>
+              <li><a href="/en/np-42-2.html" title="About Us">About Us</a><ul>
+                  <li><a href="/en/np-54-2.html" title="About TWCERT/CC">About TWCERT/CC</a></li>
+                  <li><a href="/en/lp-55-2.html" title="Press Releases">Press Releases</a></li>
+                  <li><a href="/en/np-56-2.html" title="PGP KEY">PGP KEY</a></li>
+                  <li><a href="/en/lp-71-2.html" title="Partners">Partners</a></li>
+                  <li><a href="/en/np-72-2.html" title="Contact Us">Contact Us</a></li>
+                </ul>
+              </li>
+            </ul></nav></div></header><div id="center" class="main innerpage"><a class="accesskey" href="#aC" id="aC" accesskey="C" title="Center block">:::</a><div class="innerpage_img"></div><div class="container">
+          <div class="breadcrumb">
+            <ul>
+              <li><a title="Home" href="mp-2.html">
+						Home
+					</a></li>
+              <li><a title="Services" href="np-43-2.html">Services</a></li>
+              <li><a title="Taiwan Vulnerability Note (TVN)" href="np-138-2.html">Taiwan Vulnerability Note (TVN)</a></li>
+              <li><a title="TVN List" href="np-139-2.html">TVN List</a></li>
+            </ul>
+          </div>
+          <h2 class="title">
+          </h2>
+          <div class="function_panel">
+            <div class="publish_time"><span>Date:</span><time>2021-04-06</time></div>
+            <div class="font_size"><span>Font-stze:</span><ul>
+                <li><a href="#" title="small" class="small">A-</a></li>
+                <li><a href="#" title="medium" class="medium">A</a></li>
+                <li><a href="#" title="large" class="large">A+</a></li>
+              </ul>
+            </div>
+            <div class="function">
+              <ul>
+                <li class="back"><a href="javascript:history.back()" title="Go Back">Go Back</a></li>
+                <li class="print"><a href="javascript:window.print();" title="Print">Print</a></li>
+              </ul>
+            </div>
+            <div class="share"><script>
+			function FBShare(link) {
+				window.open("http://www.facebook.com/sharer.php?u=" + encodeURIComponent(link) + "&t=" + encodeURIComponent(document.title) ,'FBLIKE',config='height=500,width=500');
+			}
+			function GoogleShare(link) {
+				window.open("https://plus.google.com/share?url=" + encodeURIComponent(link) ,'GooglePlus',config='height=500,width=500');
+			}
+			function TwitterShare(link) {
+				window.open("https://twitter.com/home?status=" + encodeURIComponent(link) ,'Twitter',config='height=500,width=500');
+			}
+			function PlurkShare(link) {
+				window.open("http://www.plurk.com/?qualifier=shares&status=" + encodeURIComponent(link)  ,'Plurk',config='height=600,width=600');
+			}
+			function LineShare(link) {
+				window.open("http://line.naver.jp/R/msg/text/" + encodeURIComponent(document.title) + " :: " + encodeURIComponent(link) ,'Line',config='height=500,width=500');
+			}
+			function CpShare(link) {
+				window.location.href = link.replace("cp-", "sp-forward-");
+			}
+		</script><a href="#" title="share" class="shareButton"><img src="/Styles/Unit002/images/basic/icon_share.png" alt="share"></a><ul>
+                <li><a href="javascript:FBShare($(location).attr('href'));" title="Facebook(open new window)"><img src="/Styles/Unit002/images/basic/icon_facebook.png" alt="facebook"></a></li>
+                <li><a href="javascript:TwitterShare($(location).attr('href'));" title="Twitter(open new window)"><img src="/Styles/Unit002/images/basic/icon_twitter.png" alt="twitter"></a></li>
+                <li><a href="javascript:LineShare($(location).attr('href'));" title="Line(open new window)"><img src="/Styles/Unit002/images/basic/icon_line.png" alt="line"></a></li>
+              </ul>
+            </div>
+          </div>
+          <h2 class="content_title">ASUS BMC's firmware: buffer overflow - Radius configuration function</h2><article class="Nucleus"><section class="Coulmn"><div class="Singleplay"></div><section><table class="Normal_table">
+                  <tr>
+                    <th width="20%">TVN ID</th>
+                    <td>TVN-202103002</td>
+                  </tr>
+                  <tr>
+                    <th width="20%">CVE ID</th>
+                    <td>CVE-2021-28175</td>
+                  </tr>
+                  <tr>
+                    <th width="20%">CVSS</th>
+                    <td>4.9 (Medium)<BR/>CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H</td>
+                  </tr>
+                  <tr>
+                    <th width="20%">Affected Products</th>
+                    <td>BMC's firmwares: <br>Z10PR-D16 1.14.51<br>ASMB8-iKVM 1.14.51<br>Z10PE-D16 WS 1.14.2</td>
+                  </tr>
+                  <tr>
+                    <th width="20%">Description</th>
+                    <td>The Radius configuration function in ASUS BMC’s firmware Web management page does not verify the string length entered by users, resulting in a Buffer overflow vulnerability. As obtaining the privileged permission, remote attackers use the leakage to abnormally terminate the Web service.</td>
+                  </tr>
+                  <tr>
+                    <th width="20%">Solution</th>
+                    <td>update BMC's firmwares to the following versions:<br>Z10PR-D16 1.16.1<br>ASMB8-iKVM 1.16.1<br>Z10PE-D16 WS 1.16.1</td>
+                  </tr>
+                  <tr>
+                    <th width="20%">Credit</th>
+                    <td>ASUS</td>
+                  </tr>
+                  <tr>
+                    <th width="20%">Public Date</th>
+                    <td>2021-04-06</td>
+                  </tr>
+                </table></section></section><section class="cp"></section></article><div class="web_link">
+            <h3>Links</h3>
+            <ol>
+              <li><a target="_blank" title="CVE-2021-28175(open new window)" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28175">CVE-2021-28175</a></li>
+              <li><a target="_blank" title="ASUS Product Security Advisory(open new window)" href="https://www.asus.com/content/ASUS-Product-Security-Advisory/">ASUS Product Security Advisory</a></li>
+              <li><a target="_blank" title="ASUS Support(open new window)" href="https://www.asus.com/tw/support/callus/">ASUS Support</a></li>
+            </ol>
+          </div>
+        </div>
+      </div><footer><a class="accesskey" href="#aB" id="aB" accesskey="B" title="Bottom block">:::</a><section class="fatfooter"><div class="container"><button type="button" name="展開/OPEN" class="btn btn-fatfooter close">展開/OPEN</button><nav><ul>
+                <li><a href="/en/np-43-2.html" title="Services">Services</a><ul>
+                    <li><a href="/en/np-57-2.html" title="Incident Report">Incident Report</a></li>
+                    <li><a href="/en/np-58-2.html" title="Terms of Use">Terms of Use</a></li>
+                    <li><a href="/en/np-138-2.html" title="Taiwan Vulnerability Note (TVN)">Taiwan Vulnerability Note (TVN)</a></li>
+                  </ul>
+                </li>
+                <li><a href="/en/np-44-2.html" title="Publications">Publications</a><ul>
+                    <li><a href="/en/lp-59-2.html" title="Public Documents">Public Documents</a></li>
+                    <li><a href="/en/lp-60-2.html" title="Videos">Videos</a></li>
+                  </ul>
+                </li>
+                <li><a href="/en/np-45-2.html" title="Links">Links</a><ul>
+                    <li><a href="/en/lp-62-2.html" title="International CERTs">International CERTs</a></li>
+                    <li><a href="/en/lp-63-2.html" title="Resources">Resources</a></li>
+                  </ul>
+                </li>
+                <li><a href="/en/np-42-2.html" title="About Us">About Us</a><ul>
+                    <li><a href="/en/np-54-2.html" title="About TWCERT/CC">About TWCERT/CC</a></li>
+                    <li><a href="/en/lp-55-2.html" title="Press Releases">Press Releases</a></li>
+                    <li><a href="/en/np-56-2.html" title="PGP KEY">PGP KEY</a></li>
+                    <li><a href="/en/lp-71-2.html" title="Partners">Partners</a></li>
+                    <li><a href="/en/np-72-2.html" title="Contact Us">Contact Us</a></li>
+                  </ul>
+                </li>
+              </ul></nav></div></section><div class="container"><div class="container"><div class="footer_4"><img alt="" src="/Public/Images/201903/136190329180323c4d.png" /><h3>Contact Us</h3><ul>	<li>Tel：<a href="tel:02-2528-6786">02-2528-6786</a></li>	<li>Toll-free Number：<a href="tel:0800-885-066">0800-885-066</a></li></ul></div><div class="footer_4"><img alt="" src="/Public/Images/201903/9951903291803735aa.png" /><h3>E-mail：</h3><ul>	<li>twcert(at)cert.org.tw</li></ul></div><div class="footer_4"><img alt="" src="/Public/Images/201903/8231903291803cb2af.png" /><h3>PGP KEY</h3><ul>	<li>TWCERT/CC PGP Public Key</li>	<li>Key ID : 0x1E9D1F1B</li></ul></div></div><hr>
+          <div class="footer_info">
+            <ul class="footer_share">
+              <li><a target="_blank" href="https://www.facebook.com/twcertcc/" title="Facebook(open new window)"><img class="cover" src="/Public/Images/201904/840190415091995f25_t.png" alt="icon_facebook"></a></li>
+              <li><a target="_blank" href="https://twitter.com/TWCERTCC" title="Twitter(open new window)"><img class="cover" src="/Public/Images/201904/215190415091910000_t.png" alt="icon_twitter"></a></li>
+              <li><a target="_blank" href="https://www.youtube.com/channel/UCciZUJ_GR_LqXdQzdRV3dGw/videos?disable_polymer=1" title="Youtube(open new window)"><img class="cover" src="/Public/Images/201904/4341904150920050eb_t.png" alt="icon_youtube"></a></li>
+              <li><a target="_blank" href="https://twcert.pixnet.net/blog" title="Blog(open new window)"><img class="cover" src="/Public/Images/201904/8561904150920d08bc_t.png" alt="icon_blog"></a></li>
+              <li><a target="_blank" href="https://www.instagram.com/twcertcc/" title="Instagram(open new window)"><img class="cover" src="/Public/Images/201904/497190415092092491_t.png" alt="icon_instagram"></a></li>
+            </ul>
+            <ul class="footer_link">
+              <li><a href="/en/cp-86-1800-84e79-2.html" title="Private Policy">Private Policy</a></li>
+              <li><a href="/en/cp-86-1799-b16ff-2.html" title="Usage Restrictions">Usage Restrictions</a></li>
+            </ul><p class="Copyright">Toll-free Number：0800-885-066<br />Best viewed with 1024 x 768 resolution.<br />Copyright © TWCERT/CC Taiwan Computer Emergency Response Team / Coordination Center<br />1998-2022</p><span class="update">Updated:<em>2022-03-07</em></span><span class="counter">Visited:<em>732272</em></span></div>
+          <div class="footer_icon"><a target="_blank" href="https://accessibility.ncc.gov.tw/Applications/Detail?category=20200401145008" title="Handicap Free(open new window)"><img class="cover" alt="" src="/Public/Images/202004/553200421144654b32_t.png">Handicap Free</a><a target="_blank" href="https://www.twnic.net.tw/en_index.php" title="TWNIC(open new window)"><img class="cover" alt="" src="/Public/Images/201903/0761903291828fb3eb_t.jpg">TWNIC</a><a href="mp-2.html" title="TWCERT/CC"><img class="cover" alt="" src="/Public/Images/201903/01419032918285cc8f_t.jpg">TWCERT/CC</a></div>
+        </div></footer></div><a href="#aU" class="scrollToTop" title="Top">Top</a><script src="/Styles/Unit002/vendor/jquery.easing.min.js"></script><script src="/Styles/Unit002/vendor/slick/slick.js"></script><script src="/Styles/Unit002/vendor/slick/slick-lightbox.js"></script><script src="/Styles/Unit002/vendor/lazyload/lazyload.min.js"></script><script src="/Styles/Unit002/js/hyui.js"></script><script src="/Styles/Unit002/js/customize.js"></script><script src="/Styles/Unit002/vendor/wow/wow.min.js"></script><script>
+			new WOW().init();
+		</script></body>
+</html>
